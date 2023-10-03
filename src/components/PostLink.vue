@@ -4,6 +4,11 @@
         <p>
             {{ resumen }}
         </p>
+        <a :href="link" >
+            <img :src="url" alt="/">
+            Sinopsis Season
+        </a>
+        
     </div>
 </template>
 
@@ -21,6 +26,14 @@ export default defineComponent({
             type: String,
             default: ""
         },
+        link: {
+            type: String,
+             default: ""
+        },
+        url: {
+            type:String ,
+            default:""
+        }
     }
 })
 </script>
@@ -29,5 +42,42 @@ export default defineComponent({
 .post-link{
     display: flex;
     flex-direction: column;
+    background-color: blueviolet;
+    margin-bottom: 18px;
+    border-radius: 30px;
 }
+
+p {
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 8px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(36, 0, 215);
+}
+
+a {
+    width: 40%;
+    padding-bottom: 8px;
+    padding-left: 25px;
+    color: violet;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+a:hover {
+    color: blue;
+    font-size: 24px;
+ }
+
+ img {
+    width: 20vw;
+    height: 20vh;
+ }
 </style>

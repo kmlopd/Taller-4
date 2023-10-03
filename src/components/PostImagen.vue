@@ -44,7 +44,13 @@ export default defineComponent({
  }
 
  a{
+    padding-left: 12px;
     color: purple;
     font-size: 20px;
+ }
+
+ a:hover {
+    color: blue-;
+    font-size: 24px;
  }
 </style>

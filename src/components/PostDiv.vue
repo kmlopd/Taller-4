@@ -1,6 +1,9 @@
 <template>
     <div class="post-div">
-        <h2>FLASH</h2>
+        <div class="imagen">
+            <img src="https://www.cinemascomics.com/wp-content/uploads/2015/09/The-Flash-promo-season-2-picset-e1451157751839.jpg.webp" alt="/">
+            <img src="https://ntvb.tmsimg.com/assets/p10781465_b_h8_ay.jpg?w=960&h=540" alt="/">
+        </div>
             <p>The Flash es una serie de televisión estadounidense de superhéroes desarrollada por Greg Berlanti, Andrew Kreisberg y Geoff Johns, que se emite en The CW en Estados Unidos. Está basada en el personaje de DC Comics Barry Allen / Flash, un superhéroe disfrazado que lucha contra el crimen con el poder de moverse a velocidades sobrehumanas. 
             Es una serie derivada de Arrow, que existe en el mismo universo ficticio. La serie sigue a Barry Allen, interpretado por Grant Gustin, un investigador de escenas del crimen que obtiene velocidad sobrehumana, que usa para luchar contra criminales, incluidos otros que también han adquirido habilidades sobrehumanas.
             Otros miembros del elenco de larga data han incluido a Candice Patton, Danielle Panabaker, Carlos Valdes, Tom Cavanagh y Jesse L. Martin.</p>
@@ -15,6 +18,8 @@
            <PostLink v-for="post in posts" :key="post.tittle"
                 :tittle="post.tittle"
                 :resumen="post.resumen"
+                :link="post.link"
+                :url="post.url"
             />
            <PostImagen/>
     </div>
@@ -24,7 +29,7 @@
     import { defineComponent, DefineComponent } from 'vue';
     import PostImagen from "./PostImagen.vue";
     import PostLink from './PostLink.vue';
-    import datos from "@/assets/posts.json"
+    import Datos from '@/assets/posts.json';
 
     export default defineComponent({
          name: "PostDiv",
@@ -32,9 +37,19 @@
           PostImagen,
           PostLink
     },
+    props: {
+        img: {
+            type: String,
+            default: ""
+        },
+        img2: {
+            type: String,
+            default: ""
+        }
+    },
      computed: {
         posts: () => {
-            return datos.map((post: any) => {
+            return Datos.map((post: any) => {
                 return post
             })
         }
@@ -45,7 +60,7 @@
 <style lang="scss" scoped>
 p {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 25px;
     text-align: justify;
 }
 
@@ -54,5 +69,16 @@ h2 {
     color: blue;
     text-align: center;
     justify-content: center;
+}
+
+.imagen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img {
+    width: 420px;
+    height: 210px;
 }
 </style>

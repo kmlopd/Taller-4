@@ -14,7 +14,9 @@ export default defineComponent({
 
 <style lang="scss">
  h1 {
-  text-align: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: red;
  }
 
  body {
@@ -22,5 +24,6 @@ export default defineComponent({
     justify-content: center;
     background-color: lightblue;
     align-items: center;
+    align-content: center;
  }
 </style>
